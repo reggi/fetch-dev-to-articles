@@ -32,11 +32,13 @@ export async function fetchDevToArticles(username, folder, rateLimit = 1000) {
   };
 
   const results = await getAllArticles();
+  console.log(`found ${results.length} articles`)
   const savedArticles = (await fs.readdir(folder)).map(v => v.replace('.json', ''))
   const next = results.filter(r => !savedArticles.includes(r.id + ""))
 
   for (const result of next) {
     await stashArticle(result.id);
+    console.log(`downloaded article id ${result.id}`)
     await delay(rateLimit);
   }
 }
