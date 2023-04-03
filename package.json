@@ -1,0 +1,18 @@
+{
+  "name": "fetch-dev-to-articles",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "fetch-dev-to-articles": "./fetch-dev-to-articles.bin.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^3.3.1"
+  }
+}
